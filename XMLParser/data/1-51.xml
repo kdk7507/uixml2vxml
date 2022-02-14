@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="euc-kr" standalone="no"?>
+<Scenario ScenarioFlow="0">
+  <tables>
+    <table key="1" tabletext="[1]시작" tablekind="0" text="" intx="10" inty="10" cx="106.2656" cy="51" tag="T" memo="간단메모(60자)" prev="false" selected="false" />
+    <table key="2" tabletext="[2]음성재생_testsc1" tablekind="1" text="" intx="266" inty="167" cx="135.099" cy="51" tag="T" memo="간략설명(60자)" prev="true" selected="false" />
+    <table key="3" tabletext="[3]DTMF분기_testsc2" tablekind="2" text="" intx="490" inty="108" cx="143.1354" cy="51" tag="T" memo="간략설명(60자)" prev="true" selected="false" />
+    <table key="4" tabletext="[4]음성재생" tablekind="1" text="" intx="809" inty="44" cx="106.2656" cy="51" tag="T" memo="간략설명(60자)" prev="false" selected="false" />
+    <table key="5" tabletext="[5]음성재생" tablekind="1" text="" intx="785" inty="315" cx="106.2656" cy="51" tag="T" memo="간략설명(60자)" prev="false" selected="false" />
+    <table key="6" tabletext="[6]음성재생" tablekind="1" text="" intx="885" inty="504" cx="106.2656" cy="51" tag="T" memo="간략설명(60자)" prev="false" selected="true" />
+    <table key="7" tabletext="[7]콜종료" tablekind="5" text="" intx="760" inty="766" cx="106.2656" cy="51" tag="T" memo="간략설명(60자)" prev="false" selected="false" />
+  </tables>
+  <Link Org="F|1" OrgKind="0" Dst="H|2" DstKind="1" Text="다음" Tag="N|1|" Tooltip="다음" Condition="" Enabled="true" selected="false">
+    <Point X="118.2656" Y="23" />
+    <Point X="148.2656" Y="23" />
+    <Point X="148.2656" Y="192" />
+    <Point X="267" Y="192" />
+  </Link>
+  <Link Org="F|2" OrgKind="1" Dst="H|3" DstKind="2" Text="다음" Tag="N|2|" Tooltip="다음" Condition="" Enabled="true" selected="false">
+    <Point X="403.0989" Y="180" />
+    <Point X="433.0989" Y="180" />
+    <Point X="433.0989" Y="133" />
+    <Point X="491" Y="133" />
+  </Link>
+  <Link Org="F|3" OrgKind="2" Dst="H|4" DstKind="1" Text="DTMF : 1" Tag="D|3|1|" Tooltip="DTMF : 1" Condition="" Enabled="true" selected="false">
+    <Point X="635.1354" Y="121" />
+    <Point X="665.1354" Y="121" />
+    <Point X="665.1354" Y="69" />
+    <Point X="810" Y="69" />
+  </Link>
+  <Link Org="F|3" OrgKind="2" Dst="H|5" DstKind="1" Text="DTMF : 2" Tag="D|4|2|" Tooltip="DTMF : 2" Condition="" Enabled="true" selected="false">
+    <Point X="635.1354" Y="121" />
+    <Point X="685.1354" Y="121" />
+    <Point X="685.1354" Y="340" />
+    <Point X="786" Y="340" />
+  </Link>
+  <Link Org="F|3" OrgKind="2" Dst="H|6" DstKind="1" Text="DTMF : 3" Tag="D|5|3|" Tooltip="DTMF : 3" Condition="" Enabled="true" selected="false">
+    <Point X="635.1354" Y="121" />
+    <Point X="705.1354" Y="121" />
+    <Point X="705.1354" Y="529" />
+    <Point X="886" Y="529" />
+  </Link>
+  <Link Org="F|3" OrgKind="2" Dst="H|7" DstKind="5" Text="이외" Tag="D|6||" Tooltip="이외" Condition="" Enabled="true" selected="false">
+    <Point X="635.1354" Y="121" />
+    <Point X="725.1354" Y="121" />
+    <Point X="725.1354" Y="791" />
+    <Point X="761" Y="791" />
+  </Link>
+  <Components>
+    <START4 id="1">
+      <COMMON>
+        <itemkey value="1" />
+        <itemkind value="0" />
+        <itemname value="[1]시작" />
+        <itemservicecode value="" />
+        <itemservicename value="" />
+        <itemtext value="" />
+        <itemLocationMemory value="0" />
+        <itemPreviousMemory value="0" />
+        <itemPushMemoryIdx value="" />
+        <itemAssignServiceCode value="" />
+        <itemAddUserVxml value="" />
+        <itemCTILink value="false" />
+        <itemDigitAtService value="" />
+        <itemReasonAtService value="0" />
+        <itemQueueNumToAgent value="0" />
+        <itemPopupInfoToAgent value="" />
+        <itemDN value="" />
+        <itemANI value="" />
+      </COMMON>
+      <ERR>
+        <ErrMaxTime value="5" />
+        <ErrMaxCount value="3" />
+        <ErrInput value="" />
+        <ErrInputCount value="0" />
+        <ErrCountOver value="" />
+        <ErrCountOverCount value="0" />
+        <ErrTimeOver value="" />
+        <ErrTimeOverCount value="0" />
+        <ErrLastBargein value="0" />
+        <ErrProcess value="0" />
+        <ErrLinkScenario value="" />
+        <ErrDigit value="*" />
+        <ErrDigitVoice value="" />
+        <ErrDigitVoiceCount value="0" />
+        <ErrInputAddVxml value="" />
+        <ErrTimeAddVxml value="" />
+        <ErrCountAddVxml value="" />
+        <ErrDigitAddVxml value="" />
+      </ERR>
+    </START4>
+    <PLAYVOICE4 id="5">
+      <COMMON>
+        <itemkey value="5" />
+        <itemkind value="1" />
+        <itemname value="[5]음성재생" />
+        <itemservicecode value="" />
+        <itemservicename value="" />
+        <itemtext value="" />
+        <itemLocationMemory value="0" />
+        <itemPreviousMemory value="0" />
+        <itemPushMemoryIdx value="" />
+        <itemAssignServiceCode value="" />
+        <itemAddUserVxml value="" />
+        <itemCTILink value="false" />
+        <itemDigitAtService value="" />
+        <itemReasonAtService value="0" />
+        <itemQueueNumToAgent value="0" />
+        <itemPopupInfoToAgent value="" />
+        <itemDN value="" />
+        <itemANI value="" />
+      </COMMON>
+      <PLAYVOICE>
+        <Async value="0" />
+        <BargeinDTMF value="1" />
+        <ClearDTMF value="0" />
+        <BargeinSwitch value="0" />
+        <SelectVoice value="@|1|text|TTS|2번 음성재생입니다.||10|TTS문장||" />
+        <SelectVoiceCount value="1" />
+      </PLAYVOICE>
+    </PLAYVOICE4>
+    <PLAYVOICE4 id="4">
+      <COMMON>
+        <itemkey value="4" />
+        <itemkind value="1" />
+        <itemname value="[4]음성재생" />
+        <itemservicecode value="" />
+        <itemservicename value="" />
+        <itemtext value="" />
+        <itemLocationMemory value="0" />
+        <itemPreviousMemory value="0" />
+        <itemPushMemoryIdx value="" />
+        <itemAssignServiceCode value="" />
+        <itemAddUserVxml value="" />
+        <itemCTILink value="false" />
+        <itemDigitAtService value="" />
+        <itemReasonAtService value="0" />
+        <itemQueueNumToAgent value="0" />
+        <itemPopupInfoToAgent value="" />
+        <itemDN value="" />
+        <itemANI value="" />
+      </COMMON>
+      <PLAYVOICE>
+        <Async value="0" />
+        <BargeinDTMF value="1" />
+        <ClearDTMF value="0" />
+        <BargeinSwitch value="0" />
+        <SelectVoice value="@|1|text|TTS|1번 음성재생입니다.||10|TTS문장||" />
+        <SelectVoiceCount value="1" />
+      </PLAYVOICE>
+    </PLAYVOICE4>
+    <PLAYVOICE4 id="2">
+      <COMMON>
+        <itemkey value="2" />
+        <itemkind value="1" />
+        <itemname value="[2]음성재생_testsc1" />
+        <itemservicecode value="testsc1" />
+        <itemservicename value="테스트음성재생" />
+        <itemtext value="" />
+        <itemLocationMemory value="1" />
+        <itemPreviousMemory value="0" />
+        <itemPushMemoryIdx value="" />
+        <itemAssignServiceCode value="inputsc" />
+        <itemAddUserVxml value="&lt;serviceUservxml value=&quot;test&quot;/&gt;" />
+        <itemCTILink value="true" />
+        <itemDigitAtService value="inputscDigit" />
+        <itemReasonAtService value="0" />
+        <itemQueueNumToAgent value="2000" />
+        <itemPopupInfoToAgent value="TESTVAR1" />
+        <itemDN value="dninfo" />
+        <itemANI value="aniinfo" />
+      </COMMON>
+      <PLAYVOICE>
+        <Async value="1" />
+        <BargeinDTMF value="1" />
+        <ClearDTMF value="1" />
+        <BargeinSwitch value="0" />
+        <SelectVoice value="@41|1|File|VOICE_FILE|sound/1.vce||9|음성파일||@|2|text|TTS|안녕하세요? 디오티스전자입니다.||10|TTS문장||1" />
+        <SelectVoiceCount value="2" />
+      </PLAYVOICE>
+    </PLAYVOICE4>
+    <PLAYVOICE4 id="6">
+      <COMMON>
+        <itemkey value="6" />
+        <itemkind value="1" />
+        <itemname value="[6]음성재생" />
+        <itemservicecode value="" />
+        <itemservicename value="" />
+        <itemtext value="" />
+        <itemLocationMemory value="0" />
+        <itemPreviousMemory value="0" />
+        <itemPushMemoryIdx value="" />
+        <itemAssignServiceCode value="" />
+        <itemAddUserVxml value="" />
+        <itemCTILink value="false" />
+        <itemDigitAtService value="" />
+        <itemReasonAtService value="0" />
+        <itemQueueNumToAgent value="0" />
+        <itemPopupInfoToAgent value="" />
+        <itemDN value="" />
+        <itemANI value="" />
+      </COMMON>
+      <PLAYVOICE>
+        <Async value="0" />
+        <BargeinDTMF value="1" />
+        <ClearDTMF value="0" />
+        <BargeinSwitch value="0" />
+        <SelectVoice value="@|1|text|TTS|3번 음성재생입니다.||10|TTS문장||" />
+        <SelectVoiceCount value="1" />
+      </PLAYVOICE>
+    </PLAYVOICE4>
+    <FLOWDTMF4 id="3">
+      <COMMON>
+        <itemkey value="3" />
+        <itemkind value="2" />
+        <itemname value="[3]DTMF분기_testsc2" />
+        <itemservicecode value="testsc2" />
+        <itemservicename value="테스트DTMF분기" />
+        <itemtext value="" />
+        <itemLocationMemory value="1" />
+        <itemPreviousMemory value="0" />
+        <itemPushMemoryIdx value="" />
+        <itemAssignServiceCode value="" />
+        <itemAddUserVxml value="" />
+        <itemCTILink value="false" />
+        <itemDigitAtService value="" />
+        <itemReasonAtService value="0" />
+        <itemQueueNumToAgent value="0" />
+        <itemPopupInfoToAgent value="" />
+        <itemDN value="" />
+        <itemANI value="" />
+      </COMMON>
+      <PLAYVOICE>
+        <Async value="1" />
+        <BargeinDTMF value="1" />
+        <ClearDTMF value="1" />
+        <BargeinSwitch value="0" />
+        <SelectVoice value="@45|1|File|VOICE_FILE|sound/5.vce||9|음성파일||" />
+        <SelectVoiceCount value="1" />
+      </PLAYVOICE>
+      <ERR>
+        <ErrMaxTime value="5" />
+        <ErrMaxCount value="3" />
+        <ErrInput value="@|1|text|TTS|입력오류 입니다.||10|TTS문장||" />
+        <ErrInputCount value="1" />
+        <ErrCountOver value="@|1|text|TTS|입력오류 횟수가 초과되었습니다.||10|TTS문장||" />
+        <ErrCountOverCount value="1" />
+        <ErrTimeOver value="@|1|text|TTS|입력시간이 초과되었습니다.||10|TTS문장||" />
+        <ErrTimeOverCount value="1" />
+        <ErrLastBargein value="1" />
+        <ErrProcess value="0" />
+        <ErrLinkScenario value="" />
+        <ErrDigit value="*" />
+        <ErrDigitVoice value="@|1|text|TTS|digit체크 음성입니다.||10|TTS문장||" />
+        <ErrDigitVoiceCount value="1" />
+        <ErrInputAddVxml value="&lt;inputError value=&quot;inputError&quot;/&gt;" />
+        <ErrTimeAddVxml value="&lt;inputTimeError value=&quot;inputTimeError&quot;/&gt;" />
+        <ErrCountAddVxml value="&lt;inputNumError value=&quot;inputNumError&quot;/&gt;" />
+        <ErrDigitAddVxml value="&lt;enddigituser value=&quot;enddigituser&quot;/&gt;" />
+      </ERR>
+      <FLOWDTMF>
+        <VarName value="inputdtmf" />
+        <VarDefault value="" />
+        <BargeinDTMF value="1" />
+        <BargeinSwitch value="0" />
+        <PrevDTMF value="0" />
+        <ClearDigitBuffer value="1" />
+        <DTMFUserVxml value="&lt;dtmfuservxml value=&quot;dtmftest&quot;/&gt;" />
+      </FLOWDTMF>
+    </FLOWDTMF4>
+    <CALLEND4 id="7">
+      <COMMON>
+        <itemkey value="7" />
+        <itemkind value="5" />
+        <itemname value="[7]콜종료" />
+        <itemservicecode value="" />
+        <itemservicename value="" />
+        <itemtext value="" />
+        <itemLocationMemory value="0" />
+        <itemPreviousMemory value="0" />
+        <itemPushMemoryIdx value="" />
+        <itemAssignServiceCode value="" />
+        <itemAddUserVxml value="" />
+        <itemCTILink value="false" />
+        <itemDigitAtService value="" />
+        <itemReasonAtService value="0" />
+        <itemQueueNumToAgent value="0" />
+        <itemPopupInfoToAgent value="" />
+        <itemDN value="" />
+        <itemANI value="" />
+      </COMMON>
+      <PLAYVOICE>
+        <Async value="1" />
+        <BargeinDTMF value="1" />
+        <ClearDTMF value="0" />
+        <BargeinSwitch value="0" />
+        <SelectVoice value="@|1|text|TTS|콜이 종료됩니다.||10|TTS문장||" />
+        <SelectVoiceCount value="1" />
+      </PLAYVOICE>
+      <CALLEND>
+        <LineKind value="2" />
+        <ReSwitchCall value="0" />
+        <ScenarioEnd value="0" />
+      </CALLEND>
+    </CALLEND4>
+  </Components>
+</Scenario>

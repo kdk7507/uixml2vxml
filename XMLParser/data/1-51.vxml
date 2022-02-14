@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="euc-kr"?>
+<vxml version="2.0">
+  <form id="2" memory="true">
+    <servicecode name="testsc1" desc="테스트음성재생" traceinfo="true" dn="dninfo" ani="aniinfo" digits="inputscDigit" reason="1" dest="2000" uui="TESTVAR1" />
+    <value name="inputsc" />
+    <assign name="inputsc" expr="testsc1" />
+    <!--유저vxml부분 시작-->
+    <serviceUservxml value="test" />
+    <!--유저vxml부분 끝-->
+    <block clear="true">
+      <audio src="sound/1.vce" bargeinswitch="false" bargeindtmf="true" />
+      <sayas class="text" speed="1">
+        <value expr="안녕하세요? 디오티스전자입니다." />
+      </sayas>
+    </block>
+    <goto next="#3" />
+  </form>
+  <form id="3" memory="true">
+    <servicecode name="testsc2" desc="테스트DTMF분기" traceinfo="false" dn="" ani="" digits="" reason="1" dest="0" uui="" />
+    <value name="inputdtmf" />
+    <property name="maxdigits" value="1" />
+    <property name="timeout" value="5s" />
+    <property name="count" value="3" />
+    <prompt bargein="true" clear="true">
+      <block clear="true">
+        <audio src="sound/5.vce" bargeinswitch="false" bargeindtmf="true" mode="async" />
+      </block>
+    </prompt>
+    <assign name="inputdtmf" expr="inputdigit" />
+    <!--유저vxml부분 시작-->
+    <dtmfuservxml value="dtmftest" />
+    <!--유저vxml부분 끝-->
+    <choice dtmf="1" next="#4" />
+    <choice dtmf="2" next="#5" />
+    <choice dtmf="3" next="#6" />
+    <nomatch>
+      <repromptend>
+        <!--유저vxml부분 시작-->
+        <inputNumError value="inputNumError" />
+        <!--유저vxml부분 끝-->
+        <sayas class="text">
+          <value expr="입력오류 횟수가 초과되었습니다." />
+        </sayas>
+        <disconnect />
+      </repromptend>
+      <if cond="ENDDIGIT == '*'">
+        <!--유저vxml부분 시작-->
+        <enddigituser value="enddigituser" />
+        <!--유저vxml부분 끝-->
+        <sayas class="text">
+          <value expr="digit체크 음성입니다." />
+        </sayas>
+        <!--유저vxml부분 시작-->
+        <inputError value="inputError" />
+        <!--유저vxml부분 끝-->
+        <elseif cond="DIGIT_STOPREASON == 'TIMEOUT'" />
+        <sayas class="text">
+          <value expr="입력시간이 초과되었습니다." />
+        </sayas>
+        <else />
+        <!--유저vxml부분 시작-->
+        <inputTimeError value="inputTimeError" />
+        <!--유저vxml부분 끝-->
+        <sayas class="text">
+          <value expr="입력오류 입니다." />
+        </sayas>
+      </if>
+      <reprompt />
+    </nomatch>
+    <noinput>
+      <repromptend>
+        <!--유저vxml부분 시작-->
+        <inputNumError value="inputNumError" />
+        <!--유저vxml부분 끝-->
+        <sayas class="text">
+          <value expr="입력오류 횟수가 초과되었습니다." />
+        </sayas>
+        <disconnect />
+      </repromptend>
+      <!--유저vxml부분 시작-->
+      <inputError value="inputError" />
+      <!--유저vxml부분 끝-->
+      <sayas class="text">
+        <value expr="입력시간이 초과되었습니다." />
+      </sayas>
+      <reprompt />
+    </noinput>
+    <goto next="#7" />
+  </form>
+  <form id="4" memory="false">
+    <block clear="false">
+      <sayas class="text">
+        <value expr="1번 음성재생입니다." />
+      </sayas>
+    </block>
+  </form>
+  <form id="5" memory="false">
+    <block clear="false">
+      <sayas class="text">
+        <value expr="2번 음성재생입니다." />
+      </sayas>
+    </block>
+  </form>
+  <form id="6" memory="false">
+    <block clear="false">
+      <sayas class="text">
+        <value expr="3번 음성재생입니다." />
+      </sayas>
+    </block>
+  </form>
+  <form id="7" memory="false">
+    <block>
+      <block clear="false">
+        <sayas class="text">
+          <value expr="콜이 종료됩니다." />
+        </sayas>
+      </block>
+      <disconnect />
+    </block>
+  </form>
+  <form id="next" memory="false" />
+</vxml>

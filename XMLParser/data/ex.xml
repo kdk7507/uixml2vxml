@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="euc-kr" standalone="no"?>
+<Scenario ScenarioFlow="0">
+	<PLAYVOICE4 id="2">
+		<COMMON>
+			<itemkey value="2" />
+			<itemkind value="1" />
+			<itemname value="[2]음성재생_testsc1" />
+			<itemservicecode value="testsc1" />
+			<itemservicename value="테스트서비스코드1" />
+			<itemtext value="" />
+			<itemLocationMemory value="1" />
+			<itemPreviousMemory value="0" />
+			<itemPushMemoryIdx value="" />
+			<itemAssignServiceCode value="transform1" />
+			<itemAddUserVxml
+				value="&lt;uservxml value=&quot;test&quot;/&gt;" />
+			<itemCTILink value="false" />
+			<itemDigitAtService value="inputsc" />
+			<itemReasonAtService value="1" />
+			<itemQueueNumToAgent value="1000" />
+			<itemPopupInfoToAgent value="ANI" />
+			<itemDN value="1234" />
+			<itemANI value="5678" />
+		</COMMON>
+		<PLAYVOICE>
+			<Async value="1" />
+			<BargeinDTMF value="1" />
+			<ClearDTMF value="1" />
+			<BargeinSwitch value="1" />
+			<SelectVoice
+				value="@41|1|File|VOICE_FILE|sound/1.vce||9|음성파일||@|2|text|TTS|김익환||10|TTS문장||1@DATETIME|3|text|VARIABLE|DATETIME-지금 시간은-입니다||11|TTS변수TTS조합||@nTemp|4|vce|JOIN|ANI,ARSDN|sound/M1F1-Alaw-AFsp.wav|12|변수조합||" />
+			<SelectVoiceCount value="4" />
+		</PLAYVOICE>
+	</PLAYVOICE4>
+</Scenario>
